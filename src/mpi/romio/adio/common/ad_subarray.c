@@ -14,11 +14,11 @@ int ADIO_Type_create_subarray(int ndims,
                               int *array_of_starts,
                               int order, MPI_Datatype oldtype, MPI_Datatype * newtype)
 {
-    MPI_Aint extent, disps[3], size;
+    MPI_Aint lb, extent, disps[3], size;
     int i, blklens[3];
     MPI_Datatype tmp1, tmp2, types[3];
 
-    MPI_Type_extent(oldtype, &extent);
+    MPI_Type_get_extent(oldtype, &lb, &extent);
 
     if (order == MPI_ORDER_FORTRAN) {
         /* dimension 0 changes fastest */

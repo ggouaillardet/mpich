@@ -23,9 +23,9 @@ int ADIO_Type_create_darray(int size, int rank, int ndims,
 {
     MPI_Datatype type_old, type_new = MPI_DATATYPE_NULL, types[3];
     int procs, tmp_rank, i, tmp_size, blklens[3], *coords;
-    MPI_Aint *st_offsets, orig_extent, disps[3];
+    MPI_Aint *st_offsets, lb, orig_extent, disps[3];
 
-    MPI_Type_extent(oldtype, &orig_extent);
+    MPI_Type_get_extent(oldtype, &lb, &orig_extent);
 
 /* calculate position in Cartesian grid as MPI would (row-major
    ordering) */

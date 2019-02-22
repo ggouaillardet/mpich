@@ -258,8 +258,8 @@
 #undef MPI_Type_create_hindexed_block
 #define MPI_Type_create_hindexed_block PMPI_Type_create_hindexed_block
 /* #define MPI_Type_create_subarray PMPI_Type_create_subarray */
-#undef MPI_Type_extent
-#define MPI_Type_extent PMPI_Type_extent
+#undef MPI_Type_get_extent
+#define MPI_Type_get_extent PMPI_Type_get_extent
 #undef MPI_Type_free
 #define MPI_Type_free PMPI_Type_free
 #undef MPI_Type_get_contents
@@ -274,16 +274,12 @@
 #define MPI_Type_hvector PMPI_Type_hvector
 #undef MPI_Type_indexed
 #define MPI_Type_indexed PMPI_Type_indexed
-#undef MPI_Type_lb
-#define MPI_Type_lb PMPI_Type_lb
 #undef MPI_Type_size
 #define MPI_Type_size PMPI_Type_size
 #undef MPI_Type_size_x
 #define MPI_Type_size_x PMPI_Type_size_x
 #undef MPI_Type_struct
 #define MPI_Type_struct PMPI_Type_struct
-#undef MPI_Type_ub
-#define MPI_Type_ub PMPI_Type_ub
 #undef MPI_Type_vector
 #define MPI_Type_vector PMPI_Type_vector
 #undef MPI_Unpack

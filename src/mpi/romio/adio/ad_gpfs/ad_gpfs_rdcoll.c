@@ -672,7 +672,7 @@ static void ADIOI_Read_and_exch(ADIO_File fd, void *buf, MPI_Datatype
                         count[i]++;
                         ADIOI_Assert((((ADIO_Offset) (uintptr_t) read_buf) + req_off - real_off) ==
                                      (ADIO_Offset) (uintptr_t) (read_buf + req_off - real_off));
-                        MPI_Address(read_buf + req_off - real_off, &(others_req[i].mem_ptrs[j]));
+                        MPI_Get_address(read_buf + req_off - real_off, &(others_req[i].mem_ptrs[j]));
                         ADIOI_Assert((real_off + real_size - req_off) ==
                                      (int) (real_off + real_size - req_off));
                         send_size[i] +=

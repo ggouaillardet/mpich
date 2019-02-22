@@ -16,8 +16,8 @@
 
 #undef MPI_Abort
 #define MPI_Abort PMPI_Abort
-#undef MPI_Address
-#define MPI_Address PMPI_Address
+#undef MPI_Get_address
+#define MPI_Get_address PMPI_Get_address
 #undef MPI_Allgather
 #define MPI_Allgather PMPI_Allgather
 #undef MPI_Allgatherv

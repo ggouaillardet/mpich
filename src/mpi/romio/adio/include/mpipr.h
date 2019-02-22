@@ -268,8 +268,8 @@
 #define MPI_Type_get_envelope PMPI_Type_get_envelope
 #undef MPI_Type_get_true_extent
 #define MPI_Type_get_true_extent PMPI_Type_get_true_extent
-#undef MPI_Type_hindexed
-#define MPI_Type_hindexed PMPI_Type_hindexed
+#undef MPI_Type_create_hindexed
+#define MPI_Type_create_hindexed PMPI_Type_create_hindexed
 #undef MPI_Type_hvector
 #define MPI_Type_hvector PMPI_Type_hvector
 #undef MPI_Type_indexed
@@ -278,8 +278,8 @@
 #define MPI_Type_size PMPI_Type_size
 #undef MPI_Type_size_x
 #define MPI_Type_size_x PMPI_Type_size_x
-#undef MPI_Type_struct
-#define MPI_Type_struct PMPI_Type_struct
+#undef MPI_Type_create_struct
+#define MPI_Type_create_struct PMPI_Type_create_struct
 #undef MPI_Type_vector
 #define MPI_Type_vector PMPI_Type_vector
 #undef MPI_Unpack

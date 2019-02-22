@@ -31,7 +31,7 @@ int ADIO_Type_create_subarray(int ndims,
             size = (MPI_Aint) array_of_sizes[0] * extent;
             for (i = 2; i < ndims; i++) {
                 size *= (MPI_Aint) array_of_sizes[i - 1];
-                MPI_Type_hvector(array_of_subsizes[i], 1, size, tmp1, &tmp2);
+                MPI_Type_create_hvector(array_of_subsizes[i], 1, size, tmp1, &tmp2);
                 MPI_Type_free(&tmp1);
                 tmp1 = tmp2;
             }
@@ -60,7 +60,7 @@ int ADIO_Type_create_subarray(int ndims,
             size = (MPI_Aint) array_of_sizes[ndims - 1] * extent;
             for (i = ndims - 3; i >= 0; i--) {
                 size *= (MPI_Aint) array_of_sizes[i + 1];
-                MPI_Type_hvector(array_of_subsizes[i], 1, size, tmp1, &tmp2);
+                MPI_Type_create_hvector(array_of_subsizes[i], 1, size, tmp1, &tmp2);
                 MPI_Type_free(&tmp1);
                 tmp1 = tmp2;
             }
@@ -87,7 +87,7 @@ int ADIO_Type_create_subarray(int ndims,
     types[1] = tmp1;
     types[2] = MPI_UB;
 
-    MPI_Type_struct(3, blklens, disps, types, newtype);
+    MPI_Type_create_struct(3, blklens, disps, types, newtype);
 
     MPI_Type_free(&tmp1);
 
